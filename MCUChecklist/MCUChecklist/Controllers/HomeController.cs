@@ -63,11 +63,64 @@ namespace MCUChecklist.Controllers
                 "https://i2.wp.com/cromossomonerd.com.br/wp-content/uploads/2018/01/vingadores-guerra-infinita.jpg?resize=1068%2C601&ssl=1",
             };
 
-            for(int i = 0; i < FilmNames.Length; i ++)
+            bool[] FilmLiked = new bool[]
+            {
+                true,
+                false,
+                false,
+                false,
+                true,
+                true,
+                false,
+                false,
+                false,
+                false,
+                true,
+                true,
+                false,
+                false,
+                false,
+                true,
+                true,
+                true,
+                false,
+                false,
+                false,
+                true
+            };
+
+            bool[] FilmWatched = new bool[] {
+                false,
+                false,
+                false,
+                false,
+                true,
+                true,
+                false,
+                false,
+                false,
+                true,
+                true,
+                true,
+                false,
+                false,
+                false,
+                true,
+                true,
+                false,
+                false,
+                false,
+                true,
+                true
+            };
+
+            for (int i = 0; i < FilmNames.Length; i ++)
             {
                 Film newFilm = new Film();
                 newFilm.FilmName = FilmNames[i];
                 newFilm.FilmImageUrl = FilmUrls[i];
+                newFilm.FilmLiked = FilmLiked[i];
+                newFilm.FilmWatched = FilmWatched[i];
                 films.Add(newFilm);
             }
 

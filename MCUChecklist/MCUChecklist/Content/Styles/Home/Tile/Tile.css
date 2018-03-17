@@ -1,0 +1,69 @@
+﻿.tile {
+    margin-bottom: 40px;
+    height: 200px;
+    flex-grow: 1;
+    min-width: 300px;
+    margin: 10px;
+    background: url("");
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    box-shadow: 0 4px 4px 4px rgba(0,0,0, 0.5);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+
+    .tile:hover .top, .tile:hover .bottom {
+        opacity: 0.8;
+    }
+
+.top, .bottom {
+    height: 20%;
+    overflow: hidden; 
+}
+
+.top {
+    background: black;
+    opacity: 0.5;
+    transition: .4s;
+}
+
+.bottom {
+    opacity: 0.0;
+    transition: .6s;
+}
+
+    .top span {
+        font-family: 'Bebas';
+        color: white;
+        font-weight: 900;
+        font-size: 12pt;
+    }
+
+.bottom .button {
+    background: black;
+    border-radius: 2px;
+    padding: 5px;
+    color: white;
+    transition: .4s;
+}
+.bottom .button:hover {
+    background: rgba(0,0,0,0.5);
+}
+
+.bottom .button span {
+    font-family: 'Lato';
+    font-weight: bold;
+    font-size: 10pt;
+    padding-bottom: 3px;
+    padding-left: 4px;
+}
+
+.bottom .button.watched.selected i {
+    color: green;
+}
+
+.bottom .button.favourite.selected i {
+    color: red;
+}

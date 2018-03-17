@@ -10,6 +10,7 @@ namespace MCUChecklist.Models
         public string FilmName { get; set; }
         public string FilmYear { get; set; }
         public string FilmImageUrl { get; set; }
-        public bool FilmLike { get; set; }
+        public bool FilmLiked { get; set; }
+        public bool FilmWatched { get; set; }
     }
 }

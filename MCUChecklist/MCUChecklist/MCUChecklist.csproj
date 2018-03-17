@@ -153,6 +153,7 @@
   <ItemGroup>
     <Content Include="Content\Styles\Header\Header.css" />
     <Content Include="Content\Styles\Home\Index.css" />
+    <Content Include="Content\Styles\Home\Tile\Tile.css" />
     <Content Include="Content\Styles\Shared\Flex.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -163,6 +164,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Fonts\BEBAS.ttf" />
+    <None Include="Properties\PublishProfiles\MCUChecklist.jakegilesphillips.co.uk - Web Deploy.pubxml" />
     <None Include="Scripts\Libraries\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Libraries\jquery-1.10.2.js" />
     <Content Include="Scripts\Libraries\jquery-1.10.2.min.js" />
@@ -191,6 +193,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Resources\MetaTags.cshtml" />
     <Content Include="Views\Home\Header\Header.cshtml" />
+    <Content Include="Views\Home\Tile\FilmTile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

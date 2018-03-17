@@ -28,7 +28,8 @@ namespace MCUChecklist
                       "~/Content/Styles/Shared/site.css",
                       "~/Content/Styles/Shared/flex.css",
                       "~/Content/Styles/Header/header.css",
-                      "~/Content/Styles/Home/index.css"));
+                      "~/Content/Styles/Home/index.css",
+                      "~/Content/Styles/Home/Tile/tile.css"));
         }
     }
 }
