@@ -10,10 +10,14 @@ function addHomepageClickHandlers() {
             return matcher.test($(this).find('.top span').text())
         }).hide();
     });
+
+    $(".username").bind("click tap", function () {
+        $("#user-dropdown").toggleClass("show");
+    });
 }
 
 function addTileBackgrounds() {
-    $(".tile").each(function () {
+    $(".tile .background-image").each(function () {
         $(this).css("background-image", "url(" + $(this).data("background") + ")");
     });
 }

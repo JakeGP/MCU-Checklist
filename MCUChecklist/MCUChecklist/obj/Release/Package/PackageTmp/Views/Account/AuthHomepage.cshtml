@@ -1,0 +1,17 @@
+﻿@using MCUChecklist.Models
+
+@{
+    ViewBag.Title = "MCU Checklist";
+}
+
+@model User
+
+@Html.Partial("Header/Header", Model)
+
+
+<div id="tile-wrapper" class="flex wrap h-between v-start">
+    @foreach (Film film in Model.Films)
+    {
+        @Html.Partial("Tile/PersonalisedTile", film)
+    }
+</div>

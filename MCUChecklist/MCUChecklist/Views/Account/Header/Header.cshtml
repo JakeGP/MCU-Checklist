@@ -1,0 +1,50 @@
+﻿@using MCUChecklist.Models
+
+@model User
+
+<div id="cookies-warning" class="flex v-center h-around">
+    <span>This site uses cookies to help personalise your experience. By continuing to use this site you are agreeing to our use of cookies. <a href="" class="blue-link">Click here for more information on how we use cookies</a></span>
+    <i class="material-icons">close</i>
+</div>
+
+<div id="header" class="flex v-center h-center">
+    <div class="header-left flex v-center h-around">
+        <div class="menu-button"></div>
+        <b>MENU</b>
+    </div>
+
+    <div class="header-middle title flex v-center h-between">
+        <div class=" flex v-center h-start">
+            <i class="search-button material-icons">search</i>
+        </div>
+        <div class="flex vh-center">
+            <div class="page-title flex vh-center">
+                <span class="">MARVEL CINEMATIC UNIVERSE CHECKLIST</span>
+            </div>
+        </div>
+        <div class=" flex v-center h-end">
+            <i class="material-icons">notifications</i>
+        </div>
+    </div>
+
+    <div class="header-middle search flex v-center h-between">
+        <div class="flex v-center h-start">
+            <i class="material-icons">search</i>
+        </div>
+        <div class="search-bar flex vh-center">
+            <input type="text" placeholder="SEARCH.." />
+        </div>
+        <div class="flex v-center h-end">
+            <i class="close material-icons">close</i>
+        </div>
+    </div>
+
+    <div class="header-right flex vh-center">
+        <b class="username hover-red">@Model.Username</b>
+    </div>
+</div>
+
+<div id="user-dropdown" class="flex column vh-center">
+    <div class="arrow-up"></div>
+    <a href="~/Logout" class="hover-red">Logout</a>
+</div>

@@ -12,4 +12,8 @@ function addHeaderClickHandlers() {
         $("#header .header-middle.search").removeClass("show");
         $("#header .search-bar input").val("").keyup();
     });
+
+    $("#header .page-title").bind("click tap", function () {
+        window.location.href = "Home";
+    });
 }

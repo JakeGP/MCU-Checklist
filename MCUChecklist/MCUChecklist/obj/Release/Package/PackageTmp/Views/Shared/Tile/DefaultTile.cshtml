@@ -1,0 +1,17 @@
+﻿@using MCUChecklist.Models
+
+@model Film
+
+<div class="tile" data-media="@(Model.IsSeries ? "Series" : "Film")">
+    <div class="background-image" data-background="@("../Content/Images/FilmArtwork/" + Model.FilmID + ".png")"></div>
+    <div class="inner-tile flex column h-between">
+        <div class="top flex v-center h-center">
+            <span>@Model.FilmName</span>
+        </div>
+        <div class="middle flex v-start h-start">
+            <span class="synopsis">@Model.FilmSynopsis</span>
+        </div>
+        <div class="bottom flex v-center h-around">
+        </div>
+    </div>
+</div>

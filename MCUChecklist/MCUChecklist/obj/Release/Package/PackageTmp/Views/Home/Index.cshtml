@@ -11,12 +11,6 @@
 <div id="tile-wrapper" class="flex wrap h-between v-start">
     @foreach (Film film in Model.Films)
     {
-        <div class="tile flex column h-between" data-background="@film.FilmImageUrl">
-            <div class="top flex v-center h-center">
-                <span>@film.FilmName</span>
-            </div>
-            <div class="bottom flex v-center h-center">
-            </div>
-        </div>
+        @Html.Partial("Tile/DefaultTile", film)
     }
 </div>

@@ -2,7 +2,7 @@
 
 @model Film
 
-<div class="tile flex column h-between" data-background="@Model.FilmImageUrl">
+<div class="tile flex column h-between" data-background="@("../Content/Images/FilmArtwork/" + Model.FilmID + ".png")" data-media="@(Model.IsSeries ? "Series" : "Film")">
     <div class="top flex v-center h-center">
         <span>@Model.FilmName</span>
     </div>

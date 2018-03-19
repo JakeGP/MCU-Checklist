@@ -1,0 +1,44 @@
+﻿ALTER PROCEDURE MCUCAdmin.uspLogin
+    @UsernameOrEmail NVARCHAR(254),
+    @Password NVARCHAR(50)
+AS
+DECLARE @responseMessage NVARCHAR(250)
+BEGIN
+
+    SET NOCOUNT ON
+
+    DECLARE @userID INT
+
+    IF EXISTS (SELECT TOP 1 UserID FROM [dbo].[User] WHERE UserCommonName=@UsernameOrEmail)
+    BEGIN
+        SET @userID=(SELECT UserID FROM [dbo].[User] WHERE UserCommonName=@UsernameOrEmail AND PasswordHash=HASHBYTES('SHA2_512', @Password+CAST(PasswordSalt AS NVARCHAR(36))))
+
+
+       IF(@userID IS NULL)
+           SET @responseMessage='Incorrect password'
+       ELSE 
+	   BEGIN
+           SET @responseMessage='Success'
+		   UPDATE [dbo].[User] SET DateAccessed = GETDATE()
+	   END
+    END
+    ELSE IF EXISTS (SELECT TOP 1 UserID FROM [dbo].[User] WHERE UserEmailAddress=@UsernameOrEmail)
+    BEGIN
+        SET @userID=(SELECT UserID FROM [dbo].[User] WHERE UserEmailAddress=@UsernameOrEmail AND PasswordHash=HASHBYTES('SHA2_512', @Password+CAST(PasswordSalt AS NVARCHAR(36))))		
+
+       IF(@userID IS NULL)
+           SET @responseMessage='Incorrect password'
+       ELSE
+	   BEGIN
+           SET @responseMessage='Success'
+		   UPDATE [dbo].[User] SET DateAccessed = GETDATE()
+	   END
+    END
+    ELSE
+       SET @responseMessage='Invalid login'
+
+	IF(@responseMessage = 'Success')
+		SELECT @responseMessage as N'@responseMessage', UserId, UserCommonName FROM [dbo].[User] WHERE UserID=@userID AND PasswordHash=HASHBYTES('SHA2_512', @Password+CAST(PasswordSalt AS NVARCHAR(36)))
+	ELSE
+		SELECT	@responseMessage as N'@responseMessage'
+END

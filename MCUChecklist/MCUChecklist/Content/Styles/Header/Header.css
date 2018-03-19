@@ -11,6 +11,7 @@
     font-weight: 900;
     font-size: 9pt;
     transition: .4s;
+    box-shadow: 0 -4px 4px 4px rgba(0,0,0, 0.5);
 }
 #cookies-warning.show {
     bottom: 0px;
@@ -27,6 +28,7 @@
     height: 60px;
     background: black;
     box-shadow: 0 4px 4px 4px rgba(0,0,0, 0.5);
+    overflow: hidden;
 }
     #header span, #header b {
         font-family: 'Bebas';
@@ -114,20 +116,19 @@
         .header-middle.title {
         }
 
-        .header-middle.search {
-            opacity: 0.0;
-            position: absolute;
-            z-index: 0;
-            width: calc(100% - 292px);
-            background: black;
-            transition: .4s;
-        }
+.header-middle.search {
+    opacity: 0.0;
+    position: absolute;
+    z-index: 0;
+    background: black;
+    transition: .4s;
+}
         .header-middle.search.show {
             z-index: 2;
             opacity: 1.0;
         }
         .header-middle.search .search-bar {
-            width: 95%;
+            width: calc(100% - 70px);
             border-bottom: 1px solid white;
         }
             .header-middle.search .close {
@@ -167,7 +168,7 @@
 }
 .header-middle {
     z-index: 1;
-    width: 100%;
+    width: calc(100% - 322px);
     padding: 0 20px;
     height: 100%;
 }
@@ -176,4 +177,48 @@
     height: 100%;
     border-left: 1px solid white;
     padding: 0 20px;
+}
+
+
+#header.login .header-left {
+    width: calc(100% - 121px);
+}
+#header.login .header-right {
+    width: 100px;
+}
+
+#user-dropdown {
+    position: absolute;
+    right: 0;
+    top: 80px;
+    z-index: 999;
+    padding: 0px 0;
+    max-height: 0px;
+    background: black;
+    box-shadow: 0 4px 4px 4px rgba(0,0,0, 0.5);
+    margin-right: 20px;
+    overflow: hidden;
+    transition: .4s;
+    width: 101px;
+}
+    #user-dropdown.show {
+        max-height: 999px;
+        overflow: visible;
+        padding: 20px 0;
+    }
+#user-dropdown a {
+    font-family: 'Bebas';
+    color: white;
+    font-weight: bold;
+    transition: .4s;
+    font-size: 10pt;
+}
+#user-dropdown .arrow-up {
+    position: absolute;
+    bottom: 55px;
+    opacity: 0.0;
+    transition: .4s .2s;
+}
+#user-dropdown.show .arrow-up {
+    opacity: 1.0;
 }

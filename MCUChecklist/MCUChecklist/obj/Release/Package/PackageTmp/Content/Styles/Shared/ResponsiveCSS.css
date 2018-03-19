@@ -1,0 +1,78 @@
+﻿/*DESKTOP*/
+@media screen and (min-width: 1800px) {
+}
+
+/*LAPTOP*/
+@media screen and (min-width: 1200px) and (max-width: 1800px) {
+}
+
+/*TABLET LANDSCAPE*/
+@media screen and (min-width: 900px) and (max-width: 1200px) {
+}
+
+/*TABLET PORTRAIT*/
+@media screen and (min-width: 600px) and (max-width: 900px) {
+}
+
+/*PHONE*/
+@media screen and (max-width: 600px) {
+    #cookies-warning span {
+        font-size: 8pt;
+        padding: 0 10px;
+    }
+    #header .header-left, #header .header-right {
+        width: 40px;
+        padding: 0 10px;
+    }
+        #header .header-left .menu-button {
+            margin-right: 0;
+            transform: scale(0.8);
+        }
+        #header .header-left b {
+            display: none;
+        }
+        #header .header-right b {
+            font-size: 7pt;
+        }
+        #header.login .header-right b {
+            font-size: 8pt;
+        }
+        #header .header-right a {
+            text-align: center;
+        }
+    #header .header-middle, #header .header-middle.search {
+        width: calc(100% - 142px);
+        padding: 0 10px;
+    }
+        #header .header-middle .page-title {
+            padding: 10px;
+            margin: 0 10px;
+        } 
+        #header .header-middle .page-title span {
+            font-size: 4vw;
+            text-align: center;
+            padding-right: 2px;
+        }
+        #header.login .header-left {
+            padding: 0;
+        }
+
+    #header .header-left {
+        padding: 0 10px;
+        margin: 0;
+    }
+
+        #header .header-left .page-title {
+            padding: 10px;
+        }
+
+        #header .header-left .page-title span {
+            font-size: 5.8vw;
+            text-align: center;
+            padding-right: 2px;
+        }
+
+    .mobile-hide {
+        display: none;
+    }
+}

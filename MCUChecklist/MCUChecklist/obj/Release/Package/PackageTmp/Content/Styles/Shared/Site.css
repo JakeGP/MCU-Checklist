@@ -32,17 +32,41 @@ span {
     background: rgba(0,0,0,.9);
 }
 
+a:link, a:visited, a:hover, a:active {
+    color: unset;
+    text-decoration: none;
+}
+
 @font-face {
     font-family: 'Bebas';
-    src: url("../../Fonts/BEBAS.ttf");
+    src: url("../Content/Fonts/BEBAS.ttf");
 }
 
 .one-third {
     width: 33%;
     height: 100%;
 }
+.full-width {
+    width: 100%;
+}
+
+.blue-link {
+    color: #4464A2 !important;
+}
+
+.red-link {
+    color: #f11f22 !important;
+}
 
 .hover-red:hover {
     cursor: pointer;
     color: #f11f22 !important;
+}
+
+.arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid black;
 }

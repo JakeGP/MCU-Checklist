@@ -1,0 +1,29 @@
+﻿ALTER PROCEDURE MCUCAdmin.uspAddUser
+    @UserCommonName NVARCHAR(50),
+    @UserEmailAddress NVARCHAR(50),
+    @Password NVARCHAR(50),
+    @AllowNotifications BIT = 0, 
+    @EmailVerified BIT = 0
+AS
+DECLARE @responseMessage NVARCHAR(250)
+BEGIN
+    SET NOCOUNT ON
+
+    DECLARE @salt UNIQUEIDENTIFIER=NEWID()
+    BEGIN TRY
+
+        INSERT INTO dbo.[User] (UserCommonName, UserEmailAddress, PasswordHash, PasswordSalt, AllowNotifications, EmailVerified, DateCreated, DateAccessed)
+        VALUES(@UserCommonName, @UserEmailAddress, HASHBYTES('SHA2_512', @Password+CAST(@salt AS NVARCHAR(36))), @salt, @AllowNotifications, @EmailVerified, GETDATE(), GETDATE())
+
+       SET @responseMessage='Success'
+
+    END TRY
+    BEGIN CATCH
+        SET @responseMessage=ERROR_MESSAGE() 
+    END CATCH
+
+    IF(@responseMessage = 'Success')
+	SELECT @responseMessage as N'@responseMessage', UserId, UserCommonName FROM [dbo].[User] WHERE UserCommonName='Admin' AND PasswordHash=HASHBYTES('SHA2_512', 'Password123'+CAST(PasswordSalt AS NVARCHAR(36)))
+    ELSE
+	SELECT @responseMessage as N'@responseMessage'
+END

@@ -1,0 +1,35 @@
+﻿@using MCUChecklist.Models
+
+@{
+    ViewBag.Title = "MCUC - Register";
+}
+@model Register
+
+@Html.Partial("Header/RegisterHeader")
+
+<div id="body-content" class="flex column vh-center">
+
+    <div id="login-form" class="flex h-start">
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "flex column v-center h-start" }))
+        {
+            <span class="title">Create an Account</span>
+
+            <label>Username</label>
+            @Html.TextBoxFor(m => m.UserCommonName)
+
+            <label>Email Address</label>
+            @Html.TextBoxFor(m => m.UserEmailAddress)
+
+            <label>Password</label>
+            @Html.PasswordFor(m => m.Password)
+
+            <label>Confirm Password</label>
+            @Html.PasswordFor(m => m.ConfirmPassword)
+
+            <div class="full-width flex v-center h-between">
+                <input type="submit" value="Create Account" />
+                <a href="~/Login" class="forgot red-link">Already have an account?</a>
+            </div>
+        }
+    </div>
+</div>

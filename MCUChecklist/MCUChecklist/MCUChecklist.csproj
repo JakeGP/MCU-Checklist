@@ -142,19 +142,74 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Film.cs" />
-    <Compile Include="Models\TilesModel.cs" />
+    <Compile Include="Helpers\AccountHelper.cs" />
+    <Compile Include="Helpers\FilmDataHelper.cs" />
+    <Compile Include="Helpers\SiteHelper.cs" />
+    <Compile Include="Models\Account\Register.cs" />
+    <Compile Include="Models\Account\User.cs" />
+    <Compile Include="Models\Home\Film.cs" />
+    <Compile Include="Models\Account\Login.cs" />
+    <Compile Include="Models\Home\TilesModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Fonts\BEBAS.ttf" />
+    <Content Include="Content\Images\FilmArtwork\1.png" />
+    <Content Include="Content\Images\FilmArtwork\10.png" />
+    <Content Include="Content\Images\FilmArtwork\11.png" />
+    <Content Include="Content\Images\FilmArtwork\12.png" />
+    <Content Include="Content\Images\FilmArtwork\13.png" />
+    <Content Include="Content\Images\FilmArtwork\14.png" />
+    <Content Include="Content\Images\FilmArtwork\15.png" />
+    <Content Include="Content\Images\FilmArtwork\16.png" />
+    <Content Include="Content\Images\FilmArtwork\17.png" />
+    <Content Include="Content\Images\FilmArtwork\18.png" />
+    <Content Include="Content\Images\FilmArtwork\19.png" />
+    <Content Include="Content\Images\FilmArtwork\2.png" />
+    <Content Include="Content\Images\FilmArtwork\20.png" />
+    <Content Include="Content\Images\FilmArtwork\21.png" />
+    <Content Include="Content\Images\FilmArtwork\22.png" />
+    <Content Include="Content\Images\FilmArtwork\23.png" />
+    <Content Include="Content\Images\FilmArtwork\24.png" />
+    <Content Include="Content\Images\FilmArtwork\25.png" />
+    <Content Include="Content\Images\FilmArtwork\26.png" />
+    <Content Include="Content\Images\FilmArtwork\27.png" />
+    <Content Include="Content\Images\FilmArtwork\28.png" />
+    <Content Include="Content\Images\FilmArtwork\29.png" />
+    <Content Include="Content\Images\FilmArtwork\3.png" />
+    <Content Include="Content\Images\FilmArtwork\30.png" />
+    <Content Include="Content\Images\FilmArtwork\31.png" />
+    <Content Include="Content\Images\FilmArtwork\32.png" />
+    <Content Include="Content\Images\FilmArtwork\33.png" />
+    <Content Include="Content\Images\FilmArtwork\34.png" />
+    <Content Include="Content\Images\FilmArtwork\35.png" />
+    <Content Include="Content\Images\FilmArtwork\36.png" />
+    <Content Include="Content\Images\FilmArtwork\37.png" />
+    <Content Include="Content\Images\FilmArtwork\38.png" />
+    <Content Include="Content\Images\FilmArtwork\39.png" />
+    <Content Include="Content\Images\FilmArtwork\4.png" />
+    <Content Include="Content\Images\FilmArtwork\40.png" />
+    <Content Include="Content\Images\FilmArtwork\41.png" />
+    <Content Include="Content\Images\FilmArtwork\42.png" />
+    <Content Include="Content\Images\FilmArtwork\5.png" />
+    <Content Include="Content\Images\FilmArtwork\6.png" />
+    <Content Include="Content\Images\FilmArtwork\7.png" />
+    <Content Include="Content\Images\FilmArtwork\8.png" />
+    <Content Include="Content\Images\FilmArtwork\9.png" />
+    <Content Include="Content\Stored Procedures\CheckLogin.txt" />
+    <Content Include="Content\Stored Procedures\Login.txt" />
+    <Content Include="Content\Stored Procedures\AddUser.txt" />
+    <Content Include="Content\Styles\Account\Login.css" />
     <Content Include="Content\Styles\Header\Header.css" />
     <Content Include="Content\Styles\Home\Index.css" />
     <Content Include="Content\Styles\Home\Tile\Tile.css" />
     <Content Include="Content\Styles\Shared\Flex.css" />
+    <Content Include="Content\Styles\Shared\ResponsiveCSS.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Styles\Shared\Site.css" />
@@ -163,7 +218,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Fonts\BEBAS.ttf" />
     <None Include="Properties\PublishProfiles\MCUChecklist.jakegilesphillips.co.uk - Web Deploy.pubxml" />
     <None Include="Scripts\Libraries\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Libraries\jquery-1.10.2.js" />
@@ -193,7 +247,14 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Resources\MetaTags.cshtml" />
     <Content Include="Views\Home\Header\Header.cshtml" />
-    <Content Include="Views\Home\Tile\FilmTile.cshtml" />
+    <Content Include="Views\Shared\Tile\DefaultTile.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Header\LoginHeader.cshtml" />
+    <Content Include="Views\Account\AuthHomepage.cshtml" />
+    <Content Include="Views\Shared\Tile\PersonalisedTile.cshtml" />
+    <Content Include="Views\Account\Header\Header.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\Header\RegisterHeader.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -27,9 +27,11 @@ namespace MCUChecklist
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/Styles/Shared/site.css",
                       "~/Content/Styles/Shared/flex.css",
+                      "~/Content/Styles/Shared/responsivecss.css",
                       "~/Content/Styles/Header/header.css",
                       "~/Content/Styles/Home/index.css",
-                      "~/Content/Styles/Home/Tile/tile.css"));
+                      "~/Content/Styles/Home/Tile/tile.css",
+                      "~/Content/Styles/Account/login.css"));
         }
     }
 }

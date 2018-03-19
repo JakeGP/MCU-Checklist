@@ -1,0 +1,36 @@
+﻿@using MCUChecklist.Models
+
+@{
+    ViewBag.Title = "MCUC - Login";
+}
+@model Login
+
+@Html.Partial("Header/LoginHeader")
+
+<div id="body-content" class="flex column vh-center">
+    
+    <div id="login-form" class="flex h-start">
+        @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "flex column v-center h-start" }))
+        {
+            <span class="title">Log In</span>
+
+            <label>Username or Email</label>
+            @Html.TextBoxFor(m => m.UsernameOrEmail)
+
+            <label>Password</label>
+            @Html.PasswordFor(m => m.Password)
+
+            <div class="remember flex vh-center full-width">
+                <span>Remember me?</span>
+                @Html.CheckBoxFor(m => m.RememberMe)
+            </div>
+
+            @Html.ValidationMessageFor(m => m.UsernameOrEmail)
+
+            <div class="full-width flex v-center h-between">
+                <input type="submit" value="Log in" />
+                <a href="ForgottenPassword" class="forgot blue-link">Forgot your password?</a>
+            </div>
+        }
+    </div>
+</div>
